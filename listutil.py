@@ -11,12 +11,20 @@ def unique(list):
     >>> unique([5])
     [5]
     >>> unique(["b","a","a","b","b","b","a","a"])
-    ["b","a"]
+    ['b', 'a']
     >>> unique([])
     []
     """
-    pass   # remove this and write the actual code
+    if len(list) == 0:
+        return []
+    else:
+        dupl_lst = []
 
+    for x in list:
+        if x not in dupl_lst:
+            dupl_lst.append(x)
+
+    return dupl_lst
 if __name__ == "__main__":
     """Run the doctests in all methods."""
     import doctest
