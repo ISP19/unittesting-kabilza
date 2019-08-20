@@ -26,6 +26,9 @@ Write a table describing your test cases.
 | one item               |  list with 1 item   |
 | one item many times    |  list with 1 item   |
 | 2 items, many times, many orders | 2 item list, items in same order  |
+| integers and string mixed between |  all duplicates were deleted at the outcome       |
+| many integers with some duplicates  | all duplicates were deleted at the outcome   |
+| nested lists without "," |  SyntaxError      |
 | what other test case?  |  what result?       |
 
 

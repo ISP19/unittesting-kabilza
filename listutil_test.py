@@ -16,6 +16,14 @@ class ListUtilTest(unittest.TestCase):
         self.assertListEqual( ['m','o'], unique('mom'))
         self.assertListEqual( ['t','h','a','i','l','n','d'], unique('thailand'))
 
+    def test_integer(self):
+        with self.assertRaises(TypeError):
+            lst = unique(1)
+        with self.assertRaises(TypeError):
+            lst = unique(99)
+        with self.assertRaises(TypeError):
+            lst = unique(256)
+
     def test_nested_empty_list(self):
         self.assertListEqual( [[]], unique([[],[],[]]))
 
@@ -26,8 +34,6 @@ class ListUtilTest(unittest.TestCase):
         self.assertListEqual( [1,2,3,4], unique([1,2,2,3,4,4]))
         self.assertListEqual( ['abd', 'cba', 'opc', 'o', 'a', 'b'], unique(['abd', 'cba', 'opc', 'o', 'o', 'a', 'b']))
         self.assertListEqual( ['op', 4, 5, 6, 'ab'], unique(['op', 4, 4, 5, 6, 5, 'ab', 'op']))
-
-    def 
 
 if __name__ == '__main__':
     unittest.main()
