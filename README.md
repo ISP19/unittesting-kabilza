@@ -33,3 +33,33 @@ Write a table describing your test cases.
 
 
 ## Test Cases for Fraction
+
+>>> print(Fraction(60, 90))
+    2/3
+
+>>> print(Fraction(3, -1))
+    -3
+
+>>> print(Fraction(36, -60))
+    -3/5
+
+>>> print(Fraction('ab', 'ac'))
+        TypeError                                 Traceback (most recent call last)
+    in 
+    ----> 1 print(Fraction('ab','ac'))
+
+    in __init__(self, numerator, denominator)
+        15            and denominator (default 1).
+        16         """
+    ---> 17         gcd1 = math.gcd(numerator, denominator)
+        18 
+        19         if denominator < 0:
+
+    TypeError: 'str' object cannot be interpreted as an integer
+
+| Test case              |  Expected Result    |
+|------------------------|---------------------|
+| regular fraction         | return fraction with the smallest numerator/denominator in string format   |
+| input string such 'a' into Fraction class      |  TypeError   |
+| fraction with minus(-) denominator    |  return answer with negative value  |
+| input integer with 0/0 both numerator and denominator |  raises ZeroDivisionError.    |

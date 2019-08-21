@@ -31,6 +31,10 @@ class FractionTest(unittest.TestCase):
     # The test requires that your __eq__ is correct.
 
     def test_init(self):
+        with self.assertRaises(NameError):
+            Fraction(sdff,dsaf)
+        with self.assertRaises(NameError):
+            Fraction(ewrr,vfopf)
         f = Fraction(2,3)
         self.assertEqual(3, f.denominator)
         f = Fraction(4,5)
@@ -62,6 +66,10 @@ class FractionTest(unittest.TestCase):
         self.assertFalse(a == b)
 
     def test_multiply(self):
+        with self.assertRaises(TypeError):
+            Fraction('ab','cd')
+        with self.assertRaises(TypeError):
+            Fraction('wdfwef','er')
         self.assertEqual(Fraction(9,16), Fraction(3,4)*Fraction(3,4))
         self.assertEqual(Fraction(8,9), Fraction(2,3)*Fraction(4,3))
         self.assertEqual(Fraction(1,2), Fraction(9,9)*Fraction(1,2))
@@ -87,6 +95,31 @@ class FractionTest(unittest.TestCase):
         self.assertTrue(f.__eq__(g))  # same thing
         self.assertFalse(f == h)
         self.assertFalse(f.__eq__(h))
+
+        a = Fraction(3,4)
+        b = Fraction(9,16)
+        c = Fraction(4,6)
+        self.assertTrue(a == b)
+        self.assertTrue(a.__eq__(b))
+        self.assertFalse(a == c)
+        self.assertFalse(a.__eq__(c))
+
+        a = Fraction(30,90)
+        b = Fraction(1,3)
+        c = Fraction(89,23)
+        self.assertTrue(a == b)
+        self.assertTrue(a.__eq__(b))
+        self.assertFalse(a == c)
+        self.assertFalse(a.__eq__(c))
+
+        a = Fraction(1,0)
+        b = Fraction(-1,0)
+        with self.assertRaises(ZeroDivisionError):
+            c = Fraction(0,0)
+        self.assertTrue(a == b)
+        self.assertTrue(a.__eq__(b))
+        self.assertFalse(a == c)
+        self.assertFalse(a.__eq__(c))
         #TODO write more tests using other cases.
         # Consider special values like 0, 1/0, -1/0
 
