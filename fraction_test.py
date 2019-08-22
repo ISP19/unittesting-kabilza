@@ -114,12 +114,11 @@ class FractionTest(unittest.TestCase):
 
         a = Fraction(1,0)
         b = Fraction(-1,0)
-        with self.assertRaises(ZeroDivisionError):
-            c = Fraction(0,0)
+        c = Fraction(0,0)
         self.assertTrue(a == b)
         self.assertTrue(a.__eq__(b))
-        self.assertFalse(a == c)
-        self.assertFalse(a.__eq__(c))
+        self.assertTrue(a == c)
+        self.assertTrue(a.__eq__(c))
         #TODO write more tests using other cases.
         # Consider special values like 0, 1/0, -1/0
 
