@@ -20,14 +20,12 @@ class Fraction:
             self.numerator = -(int(numerator/gcd1))
             self.denominator = abs(int(denominator/gcd1))
         elif denominator == 0:
-            self.numerator = 0
-            self.denominator = 0
+            raise ValueError
         else:
             self.numerator = int(numerator/gcd1)
             self.denominator = int(denominator/gcd1)
 
 
-    #TODO Write the __add__ method, and remove this TODO comment.
     def __add__(self, frac):
         """Return the sum of two fractions as a new fraction.
            Use the standard formula  a/b + c/d = (ad+bc)/(b*d)
@@ -59,7 +57,7 @@ class Fraction:
             str = self.numerator/self.denominator
             return f"{int(str)}"
         elif self.denominator == 0:
-            return f"{0}"
+            raise ValueError
         else:
             return f"{self.numerator}/{self.denominator}"
 
@@ -69,7 +67,6 @@ class Fraction:
            is unique (3/6 is same as 1/2)
 
         """
-
         equal = self.numerator == other.numerator and self.denominator == other.denominator
 
         if equal == False:
@@ -101,15 +98,15 @@ class Fraction:
             return equal
             
     def __gt__(self, other):
-            self.numerator = abs(self.numerator)
-            self.denominator = abs(self.denominator)
-            other.numerator = abs(other.numerator)
-            other.denominator = abs(other.denominator)
+        self.numerator = abs(self.numerator)
+        self.denominator = abs(self.denominator)
+        other.numerator = abs(other.numerator)
+        other.denominator = abs(other.denominator)
 
-            num1 = (self.numerator/other.numerator)
-            num2 = (self.denominator/other.denominator)
+        num1 = (self.numerator/other.numerator)
+        num2 = (self.denominator/other.denominator)
 
-            if num1 > num2:
-                return True
-            else:
-                return False
+        if num1 > num2:
+            return True
+        else:
+            return False
