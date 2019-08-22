@@ -95,3 +95,16 @@ class Fraction:
         else:
             return equal
             
+    def __gt__(self, other):
+            self.numerator = abs(self.numerator)
+            self.denominator = abs(self.denominator)
+            other.numerator = abs(other.numerator)
+            other.denominator = abs(other.denominator)
+
+            num1 = (self.numerator/other.numerator)
+            num2 = (self.denominator/other.denominator)
+
+            if num1 > num2:
+                return True
+            else:
+                return False
