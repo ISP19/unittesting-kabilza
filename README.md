@@ -25,7 +25,7 @@ Write a table describing your test cases.
 | empty list             |  empty list         |
 | one item               |  list with 1 item   |
 | one item many times    |  list with 1 item   |
-| 2 items, many times, many orders | 2 item list, items in same order  |
+| 2 items, many times, many orders | 2 items lessen into only one (unique), items in same order  |
 | integers and string mixed between |  all duplicates were deleted at the outcome       |
 | many integers with some duplicates  | all duplicates were deleted at the outcome   |
 | nested lists without "," |  raise SyntaxError      |
