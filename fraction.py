@@ -36,17 +36,15 @@ class Fraction:
         return Fraction(numerator, denominator)
 
     def __sub__(self, frac):
+        """Return the sum of two fractions subtracting each other (self - frac).
+        """
         numerator = ((self.numerator *  frac.denominator) - (self.denominator * frac.numerator))
         denominator =  (self.denominator * frac.denominator)
         return Fraction(numerator, denominator)
 
-    #TODO write __mul__ and __str__.  Verify __eq__ works with your code.
-    #Optional have fun and overload other operators such as 
-    # __sub__ for f-g
-    # __gt__  for f > g
-    # __neg__ for -f (negation)
-
     def __mul__(self, frac):
+        """Return the multiplying result of 2 fractions
+        """
         numerator = self.numerator * frac.numerator
         denominator = self.denominator * frac.denominator
         gcd = math.gcd(numerator, denominator)
@@ -54,6 +52,8 @@ class Fraction:
         return Fraction(int(numerator/gcd), int(denominator/gcd))
     
     def __str__(self):
+        """Return the string of the Fraction to the user.
+        """
         if self.denominator == 1:
             str = self.numerator/self.denominator
             return f"{int(str)}"
@@ -99,6 +99,9 @@ class Fraction:
             return equal
             
     def __gt__(self, other):
+        """Return the boolean result of either the 2 fractions 
+        are greater than each other or not, if not return False.
+        """
         self.numerator = abs(self.numerator)
         self.denominator = abs(self.denominator)
         other.numerator = abs(other.numerator)

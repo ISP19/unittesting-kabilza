@@ -22,13 +22,9 @@ class FractionTest(unittest.TestCase):
         self.assertEqual("-4", f.__str__())
         f = Fraction(36, -60)
         self.assertEqual("-3/5", f.__str__())
-        # Constructor should provide default denominator = 1
         f = Fraction(99)
         self.assertEqual("99", f.__str__())
 
-    # TODO Write tests for __init__, __eq__, +, *.
-    # Here is an example, but you must add more test cases.  
-    # The test requires that your __eq__ is correct.
 
     def test_init(self):
         with self.assertRaises(NameError):
@@ -86,7 +82,18 @@ class FractionTest(unittest.TestCase):
         self.assertEqual(Fraction(8,3), Fraction(6,3)+Fraction(2,3))
         self.assertEqual(Fraction(14,5), Fraction(2,2)+Fraction(9,5))
         self.assertEqual(Fraction(0,0), Fraction(0,5)+Fraction(5,0))
+        
 
+    def test_subself(self):
+        # -7/12 = 1/2 - 2/3
+        self.assertEqual(Fraction(-7,12), Fraction(1,12)-Fraction(2,3))
+        self.assertEqual(Fraction(4,3), Fraction(6,3)-Fraction(2,3))
+        self.assertEqual(Fraction(-7,5), Fraction(2,5)-Fraction(9,5))
+        self.assertEqual(Fraction(0,0), Fraction(0,5)-Fraction(5,0))
+        self.assertEqual(Fraction(0,8), Fraction(5,8)-Fraction(5,8))
+        self.assertEqual(Fraction(6,24), Fraction(6,6)-Fraction(3,4))
+        self.assertEqual(Fraction(-1,2), Fraction(3,2)-Fraction(2,1))
+        
 
     def test_eq(self):
         f = Fraction(1,2)
@@ -120,8 +127,30 @@ class FractionTest(unittest.TestCase):
         self.assertTrue(a.__eq__(b))
         self.assertTrue(a == c)
         self.assertTrue(a.__eq__(c))
-        #TODO write more tests using other cases.
-        # Consider special values like 0, 1/0, -1/0
+
+    def test_gt(self):
+        a = Fraction(1,2)
+        b = Fraction(2,3)
+        self.assertTrue(a < b)
+        self.assertFalse(b < a)
+
+        c = Fraction(5,6)
+        d = Fraction(6,6)
+        self.assertTrue(c < d)
+        self.assertFalse(d < c)
+
+        c = Fraction(12,8)
+        d = Fraction(4,6)
+        self.assertFalse(c < d)
+        self.assertTrue(d < c)
+
+        c = Fraction(5,10)
+        d = Fraction(1,2)
+        self.assertFalse(c < d)
+        self.assertFalse(d < c)
+        #both of them are equal so the function returns False
+        #for both attempts
+
 
 if __name__ == "__main__":
     unittest.main()

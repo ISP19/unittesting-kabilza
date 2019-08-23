@@ -26,12 +26,12 @@ Write a table describing your test cases.
 | one item               |  list with 1 item   |
 | one item many times    |  list with 1 item   |
 | 2 items, many times, many orders | 2 items lessen into only one (unique), items in same order  |
-| integers and string mixed between |  all duplicates were deleted at the outcome       |
-| many integers with some duplicates  | all duplicates were deleted at the outcome   |
-| nested lists without "," |  raise SyntaxError      |
-| input a word in string (not in a list with []) |  returns individuals of the string eg. 'r' 'a'   |
-| input a word in string (in a list with []) |  returns the string that are unique |
-| input an integer |  raise TypeError     |
+| integers and string mixed between (in lists with []) |  all duplicates were deleted at the outcome       |
+| many integers with some duplicates (in lists with [])   | all duplicates were deleted at the outcome  |
+| nested lists without "," separating each other |  raise SyntaxError      |
+| input a word in string (not in a list with []) such as 'rat'|  returns individuals of the string eg. 'r' 'a' 't'   |
+| input a word in string (in a list with []) |  returns the string(s) that are unique |
+| input an integer without a bracket ([]) |  raise TypeError     |
 
 
 ## Test Cases for Fraction
@@ -62,7 +62,8 @@ Write a table describing your test cases.
 | Test case              |  Expected Result    |
 |------------------------|---------------------|
 | regular fraction         | return fraction with the smallest numerator/denominator in string format   |
-| fraction with out denominator       | return fraction with denominator set default to 1   |
-| input string such 'a' into Fraction class      |  NameError   |
+| fraction without denominator       | return fraction with denominator set default to 1   |
+| input string such 'ab' into Fraction class      |  NameError   |
 | fraction with negative(-) denominator    |  return answer with negative value  |
-| input integer with 0/0 both numerator and denominator |  return zero |
+| input integer with 0/0 both numerator and denominator |  return zero (0/0) |
+| input integer with 1/0 in Fraction |  return zero |
