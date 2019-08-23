@@ -62,4 +62,4 @@ Write a table describing your test cases.
 | regular fraction         | return fraction with the smallest numerator/denominator in string format   |
 | input string such 'a' into Fraction class      |  TypeError   |
 | fraction with minus(-) denominator    |  return answer with negative value  |
-| input integer with 0/0 both numerator and denominator |  raises ZeroDivisionError.    |
+| input integer with 0/0 both numerator and denominator |  return zero

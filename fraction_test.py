@@ -85,6 +85,7 @@ class FractionTest(unittest.TestCase):
         self.assertEqual(Fraction(7,2), Fraction(3,2)+Fraction(2,1))
         self.assertEqual(Fraction(8,3), Fraction(6,3)+Fraction(2,3))
         self.assertEqual(Fraction(14,5), Fraction(2,2)+Fraction(9,5))
+        self.assertEqual(Fraction(0,0), Fraction(0,5)+Fraction(1,0))
 
 
     def test_eq(self):
@@ -114,12 +115,11 @@ class FractionTest(unittest.TestCase):
 
         a = Fraction(1,0)
         b = Fraction(-1,0)
-        with self.assertRaises(ZeroDivisionError):
-            c = Fraction(0,0)
+        c = Fraction(0,0)
         self.assertTrue(a == b)
         self.assertTrue(a.__eq__(b))
-        self.assertFalse(a == c)
-        self.assertFalse(a.__eq__(c))
+        self.assertTrue(a == c)
+        self.assertTrue(a.__eq__(c))
         #TODO write more tests using other cases.
         # Consider special values like 0, 1/0, -1/0
 
