@@ -19,9 +19,9 @@ class Fraction:
         if denominator < 0:
             self.numerator = -(int(numerator/gcd1))
             self.denominator = abs(int(denominator/gcd1))
-        elif denominator == 0 or numerator == 0:
+        elif denominator == 0:
+            self.numerator = 1
             self.denominator = 0
-            self.numerator = 0
         else:
             self.numerator = int(numerator/gcd1)
             self.denominator = int(denominator/gcd1)

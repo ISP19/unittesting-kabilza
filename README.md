@@ -28,8 +28,10 @@ Write a table describing your test cases.
 | 2 items, many times, many orders | 2 item list, items in same order  |
 | integers and string mixed between |  all duplicates were deleted at the outcome       |
 | many integers with some duplicates  | all duplicates were deleted at the outcome   |
-| nested lists without "," |  SyntaxError      |
-| what other test case?  |  what result?       |
+| nested lists without "," |  raise SyntaxError      |
+| input a word in string (not in a list with []) |  returns individuals of the string eg. 'r' 'a'   |
+| input a word in string (in a list with []) |  returns the string that are unique |
+| input an integer |  raise TypeError     |
 
 
 ## Test Cases for Fraction
@@ -60,6 +62,7 @@ Write a table describing your test cases.
 | Test case              |  Expected Result    |
 |------------------------|---------------------|
 | regular fraction         | return fraction with the smallest numerator/denominator in string format   |
-| input string such 'a' into Fraction class      |  TypeError   |
-| fraction with minus(-) denominator    |  return answer with negative value  |
-| input integer with 0/0 both numerator and denominator |  return zero
+| fraction with out denominator       | return fraction with denominator set default to 1   |
+| input string such 'a' into Fraction class      |  NameError   |
+| fraction with negative(-) denominator    |  return answer with negative value  |
+| input integer with 0/0 both numerator and denominator |  return zero |
