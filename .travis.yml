@@ -1,7 +1,18 @@
-language: ruby
-rvm:
- - 2.2
- - jruby
+language: python
+    
+ python: "3.6"
+    
+ # don't clone more than necessary
+ git:
+   depth: 1
+    
+ # Install dependencies
+ install:
+   - pip install -r requirements.txt
+    
+ # script to run tests. Script can have many commands, one per line.
+ script: 
+   - python -m unittest discover -p "*_test.py"
 
-before_install:
+ before_install:
   - gem install rake
