@@ -13,6 +13,3 @@ language: python
  # script to run tests. Script can have many commands, one per line.
  script: 
    - python -m unittest discover -p "*_test.py"
-
- before_install:
-  - gem install rake
