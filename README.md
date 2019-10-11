@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/kabilza/unittesting-kabilza.svg?branch=master)](https://travis-ci.com/kabilza/unittesting-kabilza)
+
 ## Unit Testing Assignment
 
 by Pawaris Wongsalung.
