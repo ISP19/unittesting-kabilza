@@ -12,7 +12,8 @@ install:
 # script to run tests. Script can have many commands, one per line.
 script: 
   - python -m unittest discover -p "*_test.py"
-  - coverage 
+  - coverage run fraction_test.py
+  - coverage report
 
 after_success:
   - codecov
