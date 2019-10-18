@@ -28,9 +28,9 @@ class FractionTest(unittest.TestCase):
 
     def test_init(self):
         with self.assertRaises(NameError):
-            Fraction(sdff,dsaf)
+            Fraction(abc,der)
         with self.assertRaises(NameError):
-            Fraction(ewrr,vfopf)
+            Fraction(erw,vfe)
         f = Fraction(2,3)
         self.assertEqual(3, f.denominator)
         f = Fraction(4,5)
@@ -44,22 +44,6 @@ class FractionTest(unittest.TestCase):
         f = Fraction(2,-3)
         self.assertEqual(-2, f.numerator)
 
-    def test_eq(self):
-        a = Fraction(2, 3)
-        b = Fraction(4, 6)
-        self.assertTrue(a == b)
-        a = Fraction(3, 6)
-        b = Fraction(4, 6)
-        self.assertFalse(a == b)
-        a = Fraction(3, 5)
-        b = Fraction(30, 50)
-        self.assertTrue(a == b)
-        a = Fraction(20, 120)
-        b = Fraction(1, 60)
-        self.assertTrue(a == b)
-        a = Fraction(36, -60)
-        b = Fraction(-3, 5)
-        self.assertFalse(a == b)
 
     def test_multiply(self):
         with self.assertRaises(TypeError):
@@ -153,4 +137,4 @@ class FractionTest(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)
