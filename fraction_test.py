@@ -44,7 +44,6 @@ class FractionTest(unittest.TestCase):
         f = Fraction(2,-3)
         self.assertEqual(-2, f.numerator)
 
-
     def test_multiply(self):
         with self.assertRaises(TypeError):
             Fraction('ab','cd')
