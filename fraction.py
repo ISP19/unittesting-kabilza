@@ -58,7 +58,7 @@ class Fraction:
             str = self.numerator/self.denominator
             return f"{int(str)}"
         elif self.denominator == 0 or self.numerator == 0:
-            return f"{0}"
+            return str(0)
         else:
             return f"{self.numerator}/{self.denominator}"
 
