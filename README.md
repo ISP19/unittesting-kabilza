@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/kabilza/unittesting-kabilza.svg?branch=master)](https://travis-ci.com/kabilza/unittesting-kabilza)
 
-"[![codecov](https://codecov.io/gh/kabilza/unittesting-kabilza/branch/master/graph/badge.svg)](https://codecov.io/gh/kabilza/unittesting-kabilza)"
+[![codecov](https://codecov.io/gh/kabilza/unittesting-kabilza/branch/master/graph/badge.svg)](https://codecov.io/gh/kabilza/unittesting-kabilza)
 
 ## Unit Testing Assignment
 
